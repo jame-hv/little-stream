@@ -1,19 +1,26 @@
 import express from "express";
 import "dotenv/config";
-import authRoutes from "./routes/auth.route.js";
+import compression from "compression";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import path from "path";
 import { connectDB } from "./lib/database.js";
+import authRoutes from "./routes/auth.route.js";
+import userRoutes from "./routes/user.route.js";
 
 const app = express();
 
 const PORT = process.env.PORT || 5001;
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+app.use(compression());
+app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/auth", authRoutes);
+app.use("/api/users", userRoutes);
 
-app.listen(5001, () => {
+app.listen(PORT, () => {
   console.log("Server is running on port 5001");
   connectDB();
 });
