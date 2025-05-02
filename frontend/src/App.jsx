@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Notifications from "./pages/Notifications";
-import Chat from "./pages/Chat";
+import ChatPage from "./pages/ChatPage.jsx";
 import Call from "./pages/Call";
 import Onboarding from "./pages/Onboarding";
 import { Toaster } from "react-hot-toast";
@@ -86,8 +86,8 @@ const App = () => {
           path="/chat/:id"
           element={
             isAuthenticated && isOnboarded ? (
-              <Layout showSidebar={false}>
-                <Chat />
+              <Layout showSidebar={true}>
+                <ChatPage />
               </Layout>
             ) : (
               <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />
