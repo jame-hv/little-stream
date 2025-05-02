@@ -10,15 +10,14 @@ export async function getRecommendUsers(req, res) {
     const recommendedUsers = await User.find({
       $and: [
         { _id: { $ne: currentUserId } },
-        { $id: { $nin: currentUser.friends } },
-        { isOnboarded: true },
+        { _id: { $nin: currentUser.friends } },
+        {
+          isOnboarded: true,
+        },
       ],
     });
 
-    res.status(200).json({
-      message: "Recommended users fetched successfully",
-      data: recommendedUsers,
-    });
+    res.status(200).json(recommendedUsers);
   } catch (error) {
     console.log(error);
     return res.status(500).json({

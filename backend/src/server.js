@@ -12,6 +12,7 @@ import chatRoutes from "./routes/chat.route.js";
 const app = express();
 
 const PORT = process.env.PORT || 5001;
+app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 
 app.use(compression());
 app.use(cookieParser());
@@ -24,5 +25,6 @@ app.use("/api/chat", chatRoutes);
 
 app.listen(PORT, () => {
   console.log("Server is running on port 5001");
+
   connectDB();
 });
