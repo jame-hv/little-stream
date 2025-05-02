@@ -16,6 +16,10 @@ import { StreamChat } from "stream-chat";
 import { useQuery } from "@tanstack/react-query";
 import { getStreamToken } from "../lib/api";
 import toast from "react-hot-toast";
+// Import the Stream Chat CSS first (important for override order)
+import "stream-chat-react/dist/css/v2/index.css";
+// Import our custom styles
+import "../styles/ChatStyles.css";
 
 const STREAM_API_KEY = import.meta.env.VITE_STREAM_API_KEY;
 
@@ -97,7 +101,7 @@ const ChatPage = () => {
   }
 
   return (
-    <div className="h-[93vh]">
+    <div className="h-[93vh] chat-container">
       <Chat client={chatClient}>
         <Channel channel={channel}>
           <div className="w-full relative">

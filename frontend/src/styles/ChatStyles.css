@@ -1,0 +1,162 @@
+/* Custom styles for stream-chat-react components */
+
+/* Main chat container */
+.str-chat {
+  --str-chat__primary-color: #006cff;
+  --str-chat__secondary-color: #111;
+  --str-chat__primary-surface-color: #f9f9f9;
+  --str-chat__primary-surface-color-low-emphasis: #f2f2f2;
+  --str-chat__secondary-surface-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Channel header */
+.str-chat__header-livestream {
+  background: linear-gradient(to right, #4776e6, #8e54e9);
+  color: white;
+  padding: 16px;
+  height: 70px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Message list container */
+.str-chat__list {
+  background-color: var(--str-chat__secondary-surface-color);
+  padding: 20px 10px;
+}
+
+/* Individual messages */
+.str-chat__message-simple {
+  margin: 12px 0;
+}
+
+.str-chat__message--received .str-chat__message-text-inner {
+  background-color: #f0f0f0;
+  border-radius: 18px;
+  padding: 12px 16px;
+}
+
+.str-chat__message--mine .str-chat__message-text-inner {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  border-radius: 18px;
+  color: white;
+  padding: 12px 16px;
+}
+
+/* Avatar styling */
+.str-chat__avatar {
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid white;
+}
+
+/* Input box */
+.str-chat__messaging-input {
+  background-color: white;
+  padding: 15px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.str-chat__input-flat {
+  background-color: #f9f9f9;
+  border-radius: 24px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.str-chat__input-flat:focus-within {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.str-chat__send-button {
+  background-color: var(--str-chat__primary-color);
+  border-radius: 50%;
+  margin-right: 8px;
+  transition: transform 0.2s ease;
+}
+
+.str-chat__send-button:hover {
+  transform: scale(1.05);
+}
+
+/* Thread styling */
+.str-chat__thread {
+  background-color: #fcfcfc;
+  border-left: 1px solid #f0f0f0;
+}
+
+.str-chat__thread-header {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 12px 16px;
+}
+
+/* Date separators */
+.str-chat__date-separator {
+  margin: 16px 0;
+}
+
+.str-chat__date-separator-date {
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  color: #888;
+  font-size: 12px;
+  padding: 4px 12px;
+}
+
+/* Chat window container class from your React component */
+.h-\[93vh\],
+.chat-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+  max-width: 1400px;
+}
+
+/* Call button styling */
+.call-button {
+  transition: transform 0.2s ease;
+}
+
+.call-button:hover {
+  transform: scale(1.05);
+}
+
+/* Message hover effect */
+.str-chat__message-simple:hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+}
+
+/* Reaction buttons */
+.str-chat__reaction-selector {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+
+.str-chat__message-reactions-list {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+}
+
+/* Typing indicator */
+.str-chat__typing-indicator {
+  margin: 10px 0;
+}
+
+/* Mentions */
+.str-chat__message-mention {
+  background-color: rgba(0, 108, 255, 0.1);
+  border-radius: 4px;
+  color: var(--str-chat__primary-color);
+  padding: 0 4px;
+}

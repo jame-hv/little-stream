@@ -3,7 +3,6 @@ import "dotenv/config";
 import compression from "compression";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import path from "path";
 import { connectDB } from "./lib/database.js";
 import authRoutes from "./routes/auth.route.js";
 import userRoutes from "./routes/user.route.js";
@@ -11,7 +10,7 @@ import chatRoutes from "./routes/chat.route.js";
 
 const app = express();
 
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 3000;
 app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 
 app.use(compression());
@@ -24,7 +23,6 @@ app.use("/api/users", userRoutes);
 app.use("/api/chat", chatRoutes);
 
 app.listen(PORT, () => {
-  console.log("Server is running on port 5001");
-
+  console.log(`Server is running on port ${PORT}`);
   connectDB();
 });

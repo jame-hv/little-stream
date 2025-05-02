@@ -1,1 +1,18 @@
+# Data directories
 /data
+
+# Environment files
+.env
+**/.env
+
+!/frontend/.env.example
+!/backend/.env.example
+/frontend/.env
+/backend/.env
+
+# Dependencies
+**/node_modules
+
+# Build outputs
+**/dist
+**/dist-ssr
